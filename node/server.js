@@ -22,36 +22,27 @@ var SpeechToText = express.Router();
 //
 
 // // test route to make sure everything is working (accessed at GET http://localhost:8080/api)
-router.post('/', function(req, res) {
+router.get('/', function(req, res) {
 
-        var options = {
-    "method": "POST",
-    "hostname": "westus.api.cognitive.microsoft.com",
-    "port": null,
-    "path": "/vision/v1.0/analyze?visualFeatures=Categories&language=en",
-    "headers": {
-        "ocp-apim-subscription-key": "19a88d6de741408eadf0734508969723",
-        "content-type": "application/json",
-        "cache-control": "no-cache",
-        "postman-token": "72a0476e-3dfc-f955-4576-eee2894c0bfd"
-    }
-};
+        var text = req.body;
+        console.log(req.body);
+        var request = require("request");
 
-var req = http.request(options, function (res) {
-  var chunks = [];
+        var options = { method: 'POST',
+        url: 'https://westus.api.cognitive.microsoft.com/vision/v1.0/analyze?visualFeatures=Categories&language=en',
+        headers: 
+        { 'postman-token': 'c8f92caa-ebd2-b174-eab8-f02f24f45f05',
+            'cache-control': 'no-cache',
+            'content-type': 'application/json',
+            'ocp-apim-subscription-key': '7e6d05389abd492b865c044eaded3f73' },
+        body: { documents: [ { language: 'en', id: 'string', text: req.body } ] },
+        json: true };
 
-  res.on("data", function (chunk) {
-    chunks.push(chunk);
-  });
+        request(options, function (error, response, body) {
+        if (error) throw new Error(error);
 
-  res.on("end", function () {
-    var body = Buffer.concat(chunks);
-    console.log(body.toString());
-  });
-});
-
-req.write(JSON.stringify({ url: 'https://qph.ec.quoracdn.net/main-qimg-493968e878889ae5dd7927881e87275f-c' }));
-req.end();
+        res.json(body);
+        });
 
 });
 
