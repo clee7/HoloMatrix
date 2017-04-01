@@ -34,7 +34,7 @@ router.get('/', function(req, res) {
         { 'postman-token': 'c8f92caa-ebd2-b174-eab8-f02f24f45f05',
             'cache-control': 'no-cache',
             'content-type': 'application/json',
-            'ocp-apim-subscription-key': '7e6d05389abd492b865c044eaded3f73' },
+            'ocp-apim-subscription-key': '19a88d6de741408eadf0734508969723' },
         body: { documents: [ { language: 'en', id: 'string', text: req.body } ] },
         json: true };
 
