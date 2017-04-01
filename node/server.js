@@ -30,12 +30,13 @@ router.get('/', function(req, res) {
 
         var options = { method: 'POST',
         url: 'https://westus.api.cognitive.microsoft.com/vision/v1.0/analyze?visualFeatures=Categories&language=en',
+        qs: { visualFeatures: 'Categories', language: 'en' },
         headers: 
         { 'postman-token': 'c8f92caa-ebd2-b174-eab8-f02f24f45f05',
             'cache-control': 'no-cache',
             'content-type': 'application/json',
             'ocp-apim-subscription-key': '19a88d6de741408eadf0734508969723' },
-        body: { documents: [ { url: req.body } ] },
+        body: { url: req.body },
         json: true };
 
         request(options, function (error, response, body) {
