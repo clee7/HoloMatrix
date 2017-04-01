@@ -49,7 +49,7 @@ router.post('/', function(req, res) {
 
         objectname = objectname + body.categories;
 
-        console.log(body.categories.name);
+        console.log(body.categories);
 
         console.log(objectname);
 
