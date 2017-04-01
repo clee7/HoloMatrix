@@ -46,6 +46,8 @@ router.post('/', function(req, res) {
 
         objectname  = objectname +  body.tags[0].name + " " + body.tags[1].name;
 
+        console.log(objectname);
+
         });
 
         /////////////////////// OCR API CALL /////////////////////////////////////
@@ -65,6 +67,7 @@ router.post('/', function(req, res) {
 
         for (var k in body.regions.lines){
             objectname = objectname + k.text;
+            console.log(objectname);
         }
         
         console.log(objectname);
