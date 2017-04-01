@@ -1,0 +1,1 @@
+c:\users\ur device program\documents\visual studio 2015\Projects\HoloMetrix\HoloMetrix\HoloMetrix.csproj;x86
