@@ -25,6 +25,8 @@ var SpeechToText = express.Router();
 router.post('/', function(req, res) {
 
         var url = req.body.url;
+
+        console.log(req.body.url);
         
         var request = require("request");
 
