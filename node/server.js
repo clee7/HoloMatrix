@@ -56,31 +56,31 @@ router.post('/', function(req, res) {
         });
 
         /////////////////////// OCR API CALL /////////////////////////////////////
-        console.log("ocr api call ");
+        // console.log("ocr api call ");
 
-        var options1 = { method: 'POST',
-        url: 'https://westus.api.cognitive.microsoft.com/vision/v1.0/ocr?language=unk&detectOrientation =true',
-        headers: 
-        { 'postman-token': '306ef2f3-2ccf-128b-b975-d7fef6d4d8ff',
-            'cache-control': 'no-cache',
-            'content-type': 'application/json',
-            'ocp-apim-subscription-key': '19a88d6de741408eadf0734508969723' },
-        body: { url : req.body },
-        json: true };
+        // var options1 = { method: 'POST',
+        // url: 'https://westus.api.cognitive.microsoft.com/vision/v1.0/ocr?language=unk&detectOrientation =true',
+        // headers: 
+        // { 'postman-token': '306ef2f3-2ccf-128b-b975-d7fef6d4d8ff',
+        //     'cache-control': 'no-cache',
+        //     'content-type': 'application/json',
+        //     'ocp-apim-subscription-key': '19a88d6de741408eadf0734508969723' },
+        // body: { url : req.body },
+        // json: true };
 
-        request(options1, function (error, response, body) {
-        if (error) throw new Error(error);
+        // request(options1, function (error, response, body) {
+        // if (error) throw new Error(error);
 
-        for (var k in body.regions.lines){
-            objectname = objectname + k.text;
-            console.log(objectname);
-        }
+        // for (var k in body.regions.lines){
+        //     objectname = objectname + k.text;
+        //     console.log(objectname);
+        // }
         
-        console.log(objectname);
+        // console.log(objectname);
 
-        res.json(objectname);
+        // res.json(objectname);
 
-        });
+        // });
 
 });
 
