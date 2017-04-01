@@ -44,11 +44,11 @@ router.post('/', function(req, res) {
         json: true };
 
         console.log("hello");
-        
+
         request(options, function (error, response, body) {
         if (error) throw new Error(error);
 
-        objectname  = objectname +  body.categories.name + " ";
+        objectname  = objectname +  response.categories.name + " ";
 
         console.log(objectname);
 
