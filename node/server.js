@@ -45,7 +45,9 @@ router.post('/', function(req, res) {
         if (error) throw new Error(error);
 
         objectname  = objectname +  body.tags[0].name;
-
+        
+        console.log(objectname);
+        
         res.json(body);
         });
 
