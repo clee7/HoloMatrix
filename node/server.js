@@ -83,7 +83,7 @@ faceRec.post('/', function(req, res) {
         var request = require("request");
 
         var options = { method: 'POST',
-        url: 'hhttps://westus.api.cognitive.microsoft.com/face/v1.0/detect?returnFaceId=true&returnFaceLandmarks=false',
+        url: 'https://westus.api.cognitive.microsoft.com/face/v1.0/detect?returnFaceId=true&returnFaceLandmarks=false',
         qs: 
         { visualFeatures: 'Categories,tags,faces,description',
             language: 'en' },
@@ -103,7 +103,7 @@ faceRec.post('/', function(req, res) {
         });
 
         var options1 = { method: 'POST',
-        url: 'hhttps://westus.api.cognitive.microsoft.com/face/v1.0/detect?returnFaceId=true&returnFaceLandmarks=false',
+        url: 'https://westus.api.cognitive.microsoft.com/face/v1.0/detect?returnFaceId=true&returnFaceLandmarks=false',
         qs: 
         { visualFeatures: 'Categories,tags,faces,description',
             language: 'en' },
