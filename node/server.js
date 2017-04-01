@@ -51,6 +51,7 @@ router.post('/', function(req, res) {
         });
 
         /////////////////////// OCR API CALL /////////////////////////////////////
+        console.log("ocr api call ");
 
         var options1 = { method: 'POST',
         url: 'https://westus.api.cognitive.microsoft.com/vision/v1.0/ocr?language=unk&detectOrientation =true',
