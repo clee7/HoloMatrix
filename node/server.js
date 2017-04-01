@@ -48,6 +48,9 @@ router.post('/', function(req, res) {
         console.log(body);
 
         objectname = body.categories.name;
+
+        console.log(objectname);
+        
         });
 
         /////////////////////// OCR API CALL /////////////////////////////////////
