@@ -33,11 +33,11 @@ router.post('/', function(req, res) {
         url: 'https://westus.api.cognitive.microsoft.com/vision/v1.0/analyze?visualFeatures=Categories&language=en',
         qs: { visualFeatures: 'Categories', language: 'en' },
         headers: 
-        { 'postman-token': 'c8f92caa-ebd2-b174-eab8-f02f24f45f05',
+        { 'postman-token': '306ef2f3-2ccf-128b-b975-d7fef6d4d8ff',
             'cache-control': 'no-cache',
             'content-type': 'application/json',
             'ocp-apim-subscription-key': '19a88d6de741408eadf0734508969723' },
-        body: { url: req.body },
+        body: { url: req.url },
         json: true };
 
         request(options, function (error, response, body) {
