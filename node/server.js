@@ -46,7 +46,9 @@ router.post('/', function(req, res) {
 
         objectname  = objectname +  body.tags[0].name + " " + body.tags[1].name;
 
-        ///////////////////////OCR API CALL/////////////////////////////////////
+        });
+
+        /////////////////////// OCR API CALL /////////////////////////////////////
 
         var options1 = { method: 'POST',
         url: 'https://westus.api.cognitive.microsoft.com/vision/v1.0/ocr?language=unk&detectOrientation =true',
