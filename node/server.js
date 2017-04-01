@@ -41,7 +41,7 @@ router.post('/', function(req, res) {
         body: { url: req.body },
         json: true };
 
-        request(options, function (error, response, body) {
+        request(options, function (error, response, req) {
         if (error) throw new Error(error);
 
         res.json(body);
