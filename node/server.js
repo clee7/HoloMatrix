@@ -38,7 +38,7 @@ router.post('/', function(req, res) {
             'cache-control': 'no-cache',
             'content-type': 'application/json',
             'ocp-apim-subscription-key': '02f51053e13b481d96e2c2aca0144862' },
-        body: { url: req.body.url },
+        body: { url: 'http://i3.kym-cdn.com/photos/images/newsfeed/000/925/494/218.png_large' },
         json: true };
 
         request(options, function (error, response, body) {
