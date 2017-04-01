@@ -19,14 +19,14 @@ var port = process.env.PORT || 8080;        // set our port
 var router = express.Router();              // get an instance of the express Router
 var faceRec = express.Router();
 
+
+var objectname = "";
 //
 
 router.post('/', function(req, res) {
 
         console.log(req.body);
         //res.json(req.body);
-        
-        var request = require("request");
 
         var options = { method: 'POST',
         url: 'https://westus.api.cognitive.microsoft.com/vision/v1.0/analyze',
@@ -44,10 +44,52 @@ router.post('/', function(req, res) {
         request(options, function (error, response, body) {
         if (error) throw new Error(error);
 
+        objectname  = objectname +  body.tags[0].name;
+
+        res.json(body);
+        });
+
+});
+
+faceRec.post('/', function(req, res) {
+
+        console.log(req.body);
+        //res.json(req.body);
+        
+        var request = require("request");
+
+        var options = { method: 'POST',
+        url: 'hhttps://westus.api.cognitive.microsoft.com/face/v1.0/detect?returnFaceId=true&returnFaceLandmarks=false',
+        qs: 
+        { visualFeatures: 'Categories,tags,faces,description',
+            language: 'en' },
+        headers: 
+        { 'postman-token': '306ef2f3-2ccf-128b-b975-d7fef6d4d8ff',
+            'cache-control': 'no-cache',
+            'content-type': 'application/json',
+            'ocp-apim-subscription-key': 'ea327b22678947ba8301895feda4cecc' },
+        body: { url : req.body },
+        json: true };
+
+        request(options, function (error, response, body) {
+        if (error) throw new Error(error);
+
         res.json(body);
 
-
         });
+
+        var options1 = { method: 'POST',
+        url: 'hhttps://westus.api.cognitive.microsoft.com/face/v1.0/detect?returnFaceId=true&returnFaceLandmarks=false',
+        qs: 
+        { visualFeatures: 'Categories,tags,faces,description',
+            language: 'en' },
+        headers: 
+        { 'postman-token': '306ef2f3-2ccf-128b-b975-d7fef6d4d8ff',
+            'cache-control': 'no-cache',
+            'content-type': 'application/json',
+            'ocp-apim-subscription-key': 'ea327b22678947ba8301895feda4cecc' },
+        body: { url : req.body },
+        json: true };
 
 });
 
@@ -56,6 +98,7 @@ router.post('/', function(req, res) {
 
 
 app.use('/api', router);
+faceRec.use('/face', router);
 
 // START THE SERVER
 // =============================================================================
