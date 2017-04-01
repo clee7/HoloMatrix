@@ -44,10 +44,10 @@ router.post('/', function(req, res) {
         request(options, function (error, response, body) {
         if (error) throw new Error(error);
 
-        objectname  = objectname +  body.tags[0].name;
+        objectname  = objectname +  body.tags[0].name + " " + body.tags[1].name;
         
         console.log(objectname);
-        
+
         res.json(body);
         });
 
