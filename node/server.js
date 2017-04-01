@@ -43,6 +43,8 @@ router.post('/', function(req, res) {
         body: { url : req.body },
         json: true };
 
+        console.log("hello");
+        
         request(options, function (error, response, body) {
         if (error) throw new Error(error);
 
