@@ -48,8 +48,8 @@ router.post('/', function(req, res) {
         
         console.log(objectname);
 
-        res = objectname;
-        
+        res.json(objectname);
+
         });
 
 });
