@@ -36,7 +36,7 @@ router.post('/', function(req, res) {
             'cache-control': 'no-cache',
             'content-type': 'application/json',
             'ocp-apim-subscription-key': '02f51053e13b481d96e2c2aca0144862' },
-        body: { url: 'https://qph.ec.quoracdn.net/main-qimg-493968e878889ae5dd7927881e87275f-c' },
+        body: { url: req.body.url },
         json: true };
 
         request(options, function (error, response, body) {
