@@ -28,8 +28,6 @@ router.post('/', function(req, res) {
         //console.log(req.body);
         //res.json(req.body);
 
-        objectname = "";
-
         var options = { method: 'POST',
         url: 'https://westus.api.cognitive.microsoft.com/vision/v1.0/analyze',
         qs: 
