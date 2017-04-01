@@ -25,7 +25,7 @@ var SpeechToText = express.Router();
 router.post('/', function(req, res) {
 
         var text = req.body;
-        console.log(req.url);
+        console.log(req.body);
         //res.json(req.body);
         
         var request = require("request");
@@ -38,7 +38,7 @@ router.post('/', function(req, res) {
             'cache-control': 'no-cache',
             'content-type': 'application/json',
             'ocp-apim-subscription-key': '19a88d6de741408eadf0734508969723' },
-        body: { url: req.url },
+        body: { url: req.body },
         json: true };
 
         request(options, function (error, response, body) {
