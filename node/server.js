@@ -24,28 +24,34 @@ var SpeechToText = express.Router();
 // // test route to make sure everything is working (accessed at GET http://localhost:8080/api)
 router.post('/', function(req, res) {
 
-        var url = req.body.url;
+        var options = {
+    "method": "POST",
+    "hostname": "westus.api.cognitive.microsoft.com",
+    "port": null,
+    "path": "/vision/v1.0/analyze?visualFeatures=Categories&language=en",
+    "headers": {
+        "ocp-apim-subscription-key": "19a88d6de741408eadf0734508969723",
+        "content-type": "application/json",
+        "cache-control": "no-cache",
+        "postman-token": "72a0476e-3dfc-f955-4576-eee2894c0bfd"
+    }
+};
 
-        console.log(req.body.url);
-        
-        var request = require("request");
+var req = http.request(options, function (res) {
+  var chunks = [];
 
-        var options = { method: 'POST',
-        url: 'https://westus.api.cognitive.microsoft.com/face/v1.0/detect',
-        qs: { returnFaceId: 'true', returnFaceLandmarks: 'false' },
-        headers: 
-        { 'postman-token': 'd6f02425-e41e-6b9b-1e81-e1e693f5d347',
-            'cache-control': 'no-cache',
-            'content-type': 'application/json',
-            'ocp-apim-subscription-key': '02f51053e13b481d96e2c2aca0144862' },
-        body: { url: 'http://i3.kym-cdn.com/photos/images/newsfeed/000/925/494/218.png_large' },
-        json: true };
+  res.on("data", function (chunk) {
+    chunks.push(chunk);
+  });
 
-        request(options, function (error, response, body) {
-        if (error) throw new Error(error);
+  res.on("end", function () {
+    var body = Buffer.concat(chunks);
+    console.log(body.toString());
+  });
+});
 
-        console.log(body);
-        });
+req.write(JSON.stringify({ url: 'https://qph.ec.quoracdn.net/main-qimg-493968e878889ae5dd7927881e87275f-c' }));
+req.end();
 
 });
 
