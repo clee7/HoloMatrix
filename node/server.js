@@ -53,6 +53,8 @@ router.post('/', function(req, res) {
 
         console.log(objectname);
 
+        res.json(objectname);
+
         });
 
         /////////////////////// OCR API CALL /////////////////////////////////////
