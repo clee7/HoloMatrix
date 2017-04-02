@@ -1,0 +1,25 @@
+{
+  "locked": false,
+  "version": 2,
+  "targets": {
+    ".NETFramework,Version=v3.5,Profile=Unity Full v3.5": {},
+    ".NETFramework,Version=v3.5,Profile=Unity Full v3.5/win()": {},
+    ".NETFramework,Version=v3.5,Profile=Unity Full v3.5/win10-x86": {},
+    ".NETFramework,Version=v3.5,Profile=Unity Full v3.5/win10-x86-aot": {},
+    ".NETFramework,Version=v4.6": {},
+    ".NETFramework,Version=v4.6/win()": {},
+    ".NETFramework,Version=v4.6/win10-x86": {},
+    ".NETFramework,Version=v4.6/win10-x86-aot": {},
+    "UAP,Version=v10.0": {},
+    "UAP,Version=v10.0/win()": {},
+    "UAP,Version=v10.0/win10-x86": {},
+    "UAP,Version=v10.0/win10-x86-aot": {}
+  },
+  "libraries": {},
+  "projectFileDependencyGroups": {
+    "": [],
+    ".NETFramework,Version=v3.5,Profile=Unity Full v3.5": [],
+    ".NETFramework,Version=v4.6": [],
+    "UAP,Version=v10.0": []
+  }
+}

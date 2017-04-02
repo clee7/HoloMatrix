@@ -1,0 +1,13 @@
+﻿{
+  "dependencies": {},
+  "frameworks": {
+    "uap10.0": {},
+    ".NETFramework,Version=v4.6": { },
+    ".NETFramework,Version=3.5,Profile=Unity Full v3.5": { }
+  },
+  "runtimes": {
+    "win()": {},
+    "win10-x86": {},
+    "win10-x86-aot": {}
+  }
+}
