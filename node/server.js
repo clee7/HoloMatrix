@@ -47,7 +47,7 @@ router.post('/', function(req, res) {
         if (error) throw new Error(error);
         console.log(body);
 
-        objectname = body.categories.[0].name;
+        objectname = body.categories.name;
 
         console.log(objectname);
 
