@@ -50,7 +50,7 @@ router.post('/', function(req, res) {
 
         console.log(objectname);
 
-        res.json(objectname);
+        //res.json(objectname);
 
         });
 
@@ -72,8 +72,8 @@ router.post('/', function(req, res) {
 
         for (var k in body.regions[0]){
             console.log(k.words[0].text);
-            objectname = objectname + k.words[0].text;
-            console.log(objectname);
+            //objectname = objectname + k.words[0].text;
+            //console.log(objectname);
         }
         
         console.log(objectname);
