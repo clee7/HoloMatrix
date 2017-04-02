@@ -71,12 +71,12 @@ router.post('/', function(req, res) {
         if (error) throw new Error(error);
 
         console.log(body.regions[0]);
-        
-        // for (var k in body.regions[0]){
-        //     console.log(k.words[0].text);
-        //     //objectname = objectname + k.words[0].text;
-        //     //console.log(objectname);
-        // }
+
+        for (var k in body.regions[0].lines){
+            console.log(k);
+            //objectname = objectname + k.words[0].text;
+            //console.log(objectname);
+        }
         
         console.log(objectname);
 
