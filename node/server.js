@@ -72,8 +72,8 @@ router.post('/', function(req, res) {
 
         console.log(body.regions[0]);
 
-        for (var k in body.regions[0].lines){
-            console.log(k);
+        for (var k in body.regions[0].lines[1]){
+            console.log(k.text);
             //objectname = objectname + k.words[0].text;
             //console.log(objectname);
         }
